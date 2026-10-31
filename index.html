@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects & Chapters</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #3498db;
+            color: white;
+            padding: 18px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .day-card {
+            background-color: #2ecc71;
+        }
+
+        .day-card:hover {
+            background-color: #27ae60;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            background-color: #95a5a6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Subjects Section -->
+        <div id="subjects-section">
+            <h1>SUBJECTS</h1>
+            <div class="card-list">
+                <div class="card" onclick="showChapters()">MATX</div>
+            </div>
+        </div>
+
+        <!-- Chapters Section -->
+        <div id="chapters-section" class="hidden">
+            <h1>CHAPTERS</h1>
+            <div class="card-list">
+                <a href="https://youtu.be/AgWVi9w_9HU?si=iRjDFq596s-QeM2V" target="_blank" class="card day-card">DAY 1</a>
+                <a href="https://youtu.be/znQNqKd8ssQ?si=Y-3EtLF0UrrExqog" target="_blank" class="card day-card">DAY 2</a>
+                <a href="https://youtu.be/dlDAEWDtbyw?si=GROk0dUIvjuw3NQy" target="_blank" class="card day-card">DAY 3</a>
+            </div>
+            <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
+        </div>
+    </div>
+
+    <script>
+        function showChapters() {
+            document.getElementById('subjects-section').classList.add('hidden');
+            document.getElementById('chapters-section').classList.remove('hidden');
+        }
+
+        function showSubjects() {
+            document.getElementById('chapters-section').classList.add('hidden');
+            document.getElementById('subjects-section').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
