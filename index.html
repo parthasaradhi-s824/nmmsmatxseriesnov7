@@ -103,7 +103,7 @@
             <h1>SUBJECTS</h1>
             <div class="card-list">
                 <div class="card" onclick="showChapters()">MATX</div>
-                <div class="card" onclick="showChapters()">LONG VIDEOS</div>
+                <div class="card" onclick="showLongVideos()">LONG VIDEOS</div>
             </div>
         </div>
 
@@ -157,17 +157,18 @@
                 <a href="https://youtu.be/mlUcKIforFs?si=3v5UBJ7aKsT9K3in" target="_blank" class="card day-card">DAY 44</a>
                 <a href="https://youtu.be/VzR26flSX5I?si=2Ix60Zpkj2Su2bDX" target="_blank" class="card day-card">DAY 45</a>
                 <a href="https://youtu.be/kmipySvj9dE?si=piSn8WMvaZZAUjdQ" target="_blank" class="card day-card">DAY 46</a>
-              </div>
+            </div>
             <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
         </div>
 
-<!-- LONG VIDEOS Chapters Section -->
-<div id="long-videos-section" class="hidden text-section">
-        <h1>LONG VIDEOS</h1>
-        <div class="card-list">
-            <a href="https://youtu.be/JjhuclR34N8?si=nc1CgE_p5iiG3BNA" target="_blank" class="card day-card">NMMS SAT BIOLOGY: ഉറപ്പായും വരുന്ന ചോദ്യങ്ങൾ!!</a>
+        <!-- LONG VIDEOS Chapters Section -->
+        <div id="long-videos-section" class="hidden text-section">
+            <h1>LONG VIDEOS</h1>
+            <div class="card-list">
+                <a href="https://youtu.be/JjhuclR34N8?si=nc1CgE_p5iiG3BNA" target="_blank" class="card day-card">NMMS SAT BIOLOGY: ഉറപ്പായും വരുന്ന ചോദ്യങ്ങൾ!!</a>
+            </div>
+            <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
         </div>
-      <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
     </div>
 
     <script>
@@ -176,17 +177,16 @@
             document.getElementById('chapters-section').classList.remove('hidden');
         }
 
-        function showSubjects() {
-            document.getElementById('chapters-section').classList.add('hidden');
-            document.getElementById('subjects-section').classList.remove('hidden');
+        function showLongVideos() {
+            document.getElementById('subjects-section').classList.add('hidden');
+            document.getElementById('long-videos-section').classList.remove('hidden');
         }
 
-        function showBack() {
-            // എല്ലാ ചാപ്റ്റർ സെക്ഷനുകളെയും ഒളിപ്പിക്കുന്നു
-            document.getElementById('matx-section').classList.add('hidden');
+        function showSubjects() {
+            document.getElementById('chapters-section').classList.add('hidden');
             document.getElementById('long-videos-section').classList.add('hidden');
-            // സബ്ജക്ട് സെക്ഷൻ കാണിക്കുന്നു
             document.getElementById('subjects-section').classList.remove('hidden');
+        }
     </script>
 
 </body>
